@@ -1,2 +1,4 @@
 # vaarprogramering2022
-proframerings kode
+kode til skole prosjekt
+
+
