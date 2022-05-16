@@ -14,7 +14,7 @@ accountsid = os.getenv('Account_sid')
 brukertlf = os.getenv('Phone_Number')
 msgaccount = os.getenv('messaging_service_sid')
 
-# logging
+# logging configutasjon 
 logger.add(
     "file.log", format="{time:YYYY-MM-DD at HH:mm:ss} | {level} | {message}")
 
@@ -44,6 +44,7 @@ def sjekker(hostname):
         logger.debug(f"{hostname} is up")
     else:
         #sjekker om servern er faktisk nede og vennter 30 sec før den pinger serveren. hvis serveren er oppe så avslutter den if setiigen hvis ikke forsetter den vidre med og kjøre funksjoenen varsle 
+        response = os.system(f"ping -c 1 {hostname}")
         logger.critical(f"{hostname} er urespnsive sjekker igjen om 30 sec")
         time.sleep(30)
         if response == 0:
