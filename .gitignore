@@ -3,4 +3,4 @@ file.log
 venv/
 wierd/
 .vscode/
-.dsstore
+.DS_Store
