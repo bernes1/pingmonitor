@@ -3,3 +3,4 @@ file.log
 venv/
 wierd/
 .vscode/
+.dsstore
