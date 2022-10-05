@@ -8,9 +8,9 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 # henter alle env variabler 
-twiliotoken = os.getenv('Auth_Token')
-smsnumber = os.getenv('smsnumber')
-accountsid = os.getenv('Account_sid')
+auth_token = os.getenv('Auth_Token')
+account_sid = os.getenv('Account_sid')
+smsnumber = os.getenv('smsnumber')j
 brukertlf = os.getenv('Phone_Number')
 msgaccount = os.getenv('messaging_service_sid')
 
@@ -22,8 +22,7 @@ logger.add(
 # funksjon som komuniserer med Twilio sitt api og sender SMS
 def varsle(service):
     #variabel som har authenifiserings info til twilio og initaliserer twiilio clienten 
-    account_sid = accountsid
-    auth_token = twiliotoken
+
     client = Client(account_sid, auth_token)
     #her sendes meldigen
     message = client.messages.create(
@@ -32,7 +31,6 @@ def varsle(service):
         body=f'!!!!ALERT!!!!\n server med ip:{service} er nede venligst sjekk serveren nå',
         to=brukertlf
     )
-
 
 
 # funksjon som sjekker om host er oppe
