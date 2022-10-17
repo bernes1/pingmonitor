@@ -1,4 +1,3 @@
-# vaarprogramering2022
-kode til skole prosjekt
-
+#ping monitor 
+i made this as a school project
 
